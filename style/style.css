@@ -194,7 +194,7 @@ span {
 /* COURSE SECTION */
 .course-section {
     padding: 50px 100px;
-    background-color: var(--color-surface-mixed-100);
+    background-color: var(--color-surface-mixed-600);
 }
 
 .course-section .flx-rw {
