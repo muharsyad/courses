@@ -204,23 +204,20 @@ span {
 .content {
     padding: 25px 100px;
     background-color: var(--color-surface-mixed-600);
-    gap: 50px;
-}
-
-.content .line {
-    border: 1px solid var(--color-primary-100);
 }
 
 .content.flx-rw {
     align-items: flex-start;
+    justify-content: flex-start;
+    gap: 50px;
 }
 
-.content .main {
-    width: calc(75% - 25px);
+.content .mobile {
+    display: none;
 }
 
-.content .sidebar {
-    width: calc(25% - 25px);
+.content .content-list {
+    width: calc(50% - 25px);
 }
 
 .content-list ol {
@@ -235,7 +232,6 @@ span {
     margin-bottom: 8px; /* Jarak antar item nested list */
 }
 
-
 .content-list ol li {
     font-size: 1em;
     font-family: var(--font-body);
@@ -246,10 +242,41 @@ span {
     font-size: 1em;
 }
 
-.cta-buttons {
+.content-list ul li a {
+    color: #000;
+}
+
+.content-list ul li a:hover {
+    text-decoration: underline;
+}
+
+.content .video-youtube {
+    width: calc(50% - 25px);
+}
+
+.content .video-youtube iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.content .cta-buttons {
     margin-top: 50px;
     justify-content: flex-start;
     gap: 20px;
+}
+
+.content .main {
+    width: calc(75% - 25px);
+    line-height: 1.5;
+    font-family: var(--font-body);
+}
+
+.content .main .line {
+    border: 1px solid var(--color-primary-100);
+}
+
+.content .main li {
+    margin-left: 30px;
 }
 
 .content .main .cta-buttons {
@@ -279,26 +306,23 @@ span {
 }
 
 .content .main .cta-buttons a {
-    display: block;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
     padding: 7px 14px;
     color: #000;
 }
 
 .content .main .cta-buttons i {
-    font-size: 18px;
+    font-size: 22px;
     color: #000;
 }
 
-.content {
-    line-height: 1.5;
-    font-family: var(--font-body);
-}
-
-.content li {
-    margin-left: 30px;
-}
-
 /* SIDEBAR */
+.sidebar {
+    width: calc(25% - 25px);
+}
+
 .sidebar h4 {
     margin-bottom: 20px;
 }
@@ -323,9 +347,106 @@ span {
     padding: 10px 5px;
 }
 
-
-
 .sidebar ul li a:hover {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    background-color: var(--color-surface-mixed-600);
+    background-color: #e9e9e9;
+}
+
+.sidebar ul li a.active {
+    background-color: #e9e9e9;
+}
+
+/* RESPONSIVE */
+@media (max-width:1150px) {
+    .navbar, .hero-section {
+        padding: 10px 50px;
+    }
+
+    .content {
+        padding: 25px 50px;
+    }
+}
+
+@media (max-width:1050px) {
+    .navbar, .hero-section {
+        padding: 10px 20px;
+    }
+    .content {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width:990px) {
+    .navbar {
+        border-bottom: none;
+    }
+    .navbar .logo img {
+        height: 4vh;
+    }
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        display: none;
+        background-color: var(--color-surface-mixed-600);
+        border-bottom: 1px solid #d3d3d3;
+        
+    }
+    .navbar .hamburger {
+        display: block;
+    }
+    .navbar .logo {
+        flex: 1;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .content.flx-rw {
+        gap: 20px;
+    }
+
+    .content .mobile {
+        display: block;
+    }
+
+    .content iframe.mobile {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
+    .content .line.mobile {
+        border: 1px solid #000;
+        margin: 30px 0;
+    }
+
+    .content .dekstop {
+        display: none;
+    }
+
+    .content .content-list {
+        width: 100%;
+    }
+
+    .content .video-youtube {
+        width: 100%;
+    }
+
+    .content .cta-buttons {
+        justify-content: center;
+        margin: 0;
+        gap: 20px;
+    }
+
+    .content .main {
+        width: 100%;
+    }
+
+    .content .main .cta-buttons {
+        width: 100%;
+    }
 }
